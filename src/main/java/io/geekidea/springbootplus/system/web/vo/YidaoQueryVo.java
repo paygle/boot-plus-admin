@@ -1,33 +1,26 @@
-package io.geekidea.springbootplus.common.entity;
+package io.geekidea.springbootplus.system.web.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
-import io.geekidea.springbootplus.common.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import java.io.Serializable;
 
 import java.util.Date;
 
 /**
  * <p>
- * 
+ *  查询结果对象
  * </p>
  *
  * @author dodar
- * @since 2019-08-13
+ * @date 2019-08-13
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-@ApiModel(value="Yidao对象", description="")
-public class Yidao extends BaseEntity {
-
+@ApiModel(value="YidaoQueryVo对象", description="查询参数")
+public class YidaoQueryVo implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "YiDao ID")
-    @TableId(value = "dao_id", type = IdType.ID_WORKER)
     private Long daoId;
 
     @ApiModelProperty(value = "游戏账号")

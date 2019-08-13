@@ -1,11 +1,11 @@
-package io.geekidea.springbootplus.common.mapper;
+package io.geekidea.springbootplus.system.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import io.geekidea.springbootplus.common.entity.TaskManagement;
-import io.geekidea.springbootplus.common.web.param.TaskManagementQueryParam;
-import io.geekidea.springbootplus.common.web.vo.TaskManagementQueryVo;
+import io.geekidea.springbootplus.system.entity.TaskManagement;
+import io.geekidea.springbootplus.system.web.param.TaskManagementQueryParam;
+import io.geekidea.springbootplus.system.web.vo.TaskManagementQueryVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package io.geekidea.springbootplus.common.web.param;
+package io.geekidea.springbootplus.system.web.param;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
@@ -16,7 +16,7 @@ import io.geekidea.springbootplus.common.web.param.QueryParam;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value="TaskManagementQueryParam对象", description="查询参数")
-public class TaskManagementQueryParam extends QueryParam {
+@ApiModel(value="YidaoQueryParam对象", description="查询参数")
+public class YidaoQueryParam extends QueryParam {
     private static final long serialVersionUID = 1L;
 }

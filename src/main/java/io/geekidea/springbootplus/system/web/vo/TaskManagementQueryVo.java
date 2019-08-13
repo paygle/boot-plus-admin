@@ -1,33 +1,26 @@
-package io.geekidea.springbootplus.common.entity;
+package io.geekidea.springbootplus.system.web.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
-import io.geekidea.springbootplus.common.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import java.io.Serializable;
 
 import java.util.Date;
 
 /**
  * <p>
- * 
+ *  查询结果对象
  * </p>
  *
  * @author dodar
- * @since 2019-08-13
+ * @date 2019-08-13
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-@ApiModel(value="TaskManagement对象", description="")
-public class TaskManagement extends BaseEntity {
-
+@ApiModel(value="TaskManagementQueryVo对象", description="查询参数")
+public class TaskManagementQueryVo implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "任务ID")
-    @TableId(value = "task_id", type = IdType.AUTO)
     private Long taskId;
 
     @ApiModelProperty(value = "手机IMEI码")

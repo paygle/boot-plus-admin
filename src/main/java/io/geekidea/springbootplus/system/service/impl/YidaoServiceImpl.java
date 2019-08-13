@@ -1,10 +1,10 @@
-package io.geekidea.springbootplus.common.service.impl;
+package io.geekidea.springbootplus.system.service.impl;
 
-import io.geekidea.springbootplus.common.entity.Yidao;
-import io.geekidea.springbootplus.common.mapper.YidaoMapper;
-import io.geekidea.springbootplus.common.service.YidaoService;
-import io.geekidea.springbootplus.common.web.param.YidaoQueryParam;
-import io.geekidea.springbootplus.common.web.vo.YidaoQueryVo;
+import io.geekidea.springbootplus.system.entity.Yidao;
+import io.geekidea.springbootplus.system.mapper.YidaoMapper;
+import io.geekidea.springbootplus.system.service.YidaoService;
+import io.geekidea.springbootplus.system.web.param.YidaoQueryParam;
+import io.geekidea.springbootplus.system.web.vo.YidaoQueryVo;
 import io.geekidea.springbootplus.common.service.impl.BaseServiceImpl;
 import io.geekidea.springbootplus.common.web.vo.Paging;
 import lombok.extern.slf4j.Slf4j;

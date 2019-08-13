@@ -1,9 +1,9 @@
-package io.geekidea.springbootplus.common.service;
+package io.geekidea.springbootplus.system.service;
 
-import io.geekidea.springbootplus.common.entity.TaskManagement;
+import io.geekidea.springbootplus.system.entity.TaskManagement;
 import io.geekidea.springbootplus.common.service.BaseService;
-import io.geekidea.springbootplus.common.web.param.TaskManagementQueryParam;
-import io.geekidea.springbootplus.common.web.vo.TaskManagementQueryVo;
+import io.geekidea.springbootplus.system.web.param.TaskManagementQueryParam;
+import io.geekidea.springbootplus.system.web.vo.TaskManagementQueryVo;
 import io.geekidea.springbootplus.common.web.vo.Paging;
 
 import java.io.Serializable;

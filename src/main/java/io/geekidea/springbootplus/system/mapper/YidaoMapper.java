@@ -1,11 +1,11 @@
-package io.geekidea.springbootplus.common.mapper;
+package io.geekidea.springbootplus.system.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import io.geekidea.springbootplus.common.entity.Yidao;
-import io.geekidea.springbootplus.common.web.param.YidaoQueryParam;
-import io.geekidea.springbootplus.common.web.vo.YidaoQueryVo;
+import io.geekidea.springbootplus.system.entity.Yidao;
+import io.geekidea.springbootplus.system.web.param.YidaoQueryParam;
+import io.geekidea.springbootplus.system.web.vo.YidaoQueryVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

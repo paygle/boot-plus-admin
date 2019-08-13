@@ -55,13 +55,13 @@ public class CodeGenerator {
 
     // ############################ 配置部分 start ############################
     // 模块名称
-    private static final String MODULE_NAME = "common";
+    private static final String MODULE_NAME = "system";
     // 作者
     private static final String AUTHOR = "dodar";
     // 生成的表名称
-    private static final String TABLE_NAME = "yidao";
+    private static final String TABLE_NAME = "task_management";
     // 主键数据库列名称
-    private static final String PK_ID_COLUMN_NAME = "dao_id";
+    private static final String PK_ID_COLUMN_NAME = "task_id";
     // 代码生成策略 true：All/false:SIMPLE
     private static final boolean GENERATOR_STRATEGY = true;
     // 分页列表查询是否排序 true：有排序参数/false：无

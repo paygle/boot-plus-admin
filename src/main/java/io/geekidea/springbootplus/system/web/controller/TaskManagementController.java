@@ -1,9 +1,9 @@
-package io.geekidea.springbootplus.common.web.controller;
+package io.geekidea.springbootplus.system.web.controller;
 
-import io.geekidea.springbootplus.common.entity.TaskManagement;
-import io.geekidea.springbootplus.common.service.TaskManagementService;
-import io.geekidea.springbootplus.common.web.param.TaskManagementQueryParam;
-import io.geekidea.springbootplus.common.web.vo.TaskManagementQueryVo;
+import io.geekidea.springbootplus.system.entity.TaskManagement;
+import io.geekidea.springbootplus.system.service.TaskManagementService;
+import io.geekidea.springbootplus.system.web.param.TaskManagementQueryParam;
+import io.geekidea.springbootplus.system.web.vo.TaskManagementQueryVo;
 import io.geekidea.springbootplus.common.web.controller.BaseController;
 import io.geekidea.springbootplus.common.api.ApiResult;
     import io.swagger.annotations.Api;

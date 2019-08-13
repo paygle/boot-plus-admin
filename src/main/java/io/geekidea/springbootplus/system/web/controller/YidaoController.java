@@ -1,9 +1,9 @@
-package io.geekidea.springbootplus.common.web.controller;
+package io.geekidea.springbootplus.system.web.controller;
 
-import io.geekidea.springbootplus.common.entity.Yidao;
-import io.geekidea.springbootplus.common.service.YidaoService;
-import io.geekidea.springbootplus.common.web.param.YidaoQueryParam;
-import io.geekidea.springbootplus.common.web.vo.YidaoQueryVo;
+import io.geekidea.springbootplus.system.entity.Yidao;
+import io.geekidea.springbootplus.system.service.YidaoService;
+import io.geekidea.springbootplus.system.web.param.YidaoQueryParam;
+import io.geekidea.springbootplus.system.web.vo.YidaoQueryVo;
 import io.geekidea.springbootplus.common.web.controller.BaseController;
 import io.geekidea.springbootplus.common.api.ApiResult;
     import io.swagger.annotations.Api;

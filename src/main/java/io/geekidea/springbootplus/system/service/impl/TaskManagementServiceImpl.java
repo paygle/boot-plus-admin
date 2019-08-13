@@ -1,10 +1,10 @@
-package io.geekidea.springbootplus.common.service.impl;
+package io.geekidea.springbootplus.system.service.impl;
 
-import io.geekidea.springbootplus.common.entity.TaskManagement;
-import io.geekidea.springbootplus.common.mapper.TaskManagementMapper;
-import io.geekidea.springbootplus.common.service.TaskManagementService;
-import io.geekidea.springbootplus.common.web.param.TaskManagementQueryParam;
-import io.geekidea.springbootplus.common.web.vo.TaskManagementQueryVo;
+import io.geekidea.springbootplus.system.entity.TaskManagement;
+import io.geekidea.springbootplus.system.mapper.TaskManagementMapper;
+import io.geekidea.springbootplus.system.service.TaskManagementService;
+import io.geekidea.springbootplus.system.web.param.TaskManagementQueryParam;
+import io.geekidea.springbootplus.system.web.vo.TaskManagementQueryVo;
 import io.geekidea.springbootplus.common.service.impl.BaseServiceImpl;
 import io.geekidea.springbootplus.common.web.vo.Paging;
 import lombok.extern.slf4j.Slf4j;
