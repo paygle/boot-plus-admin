@@ -41,7 +41,7 @@ public class CodeGenerator {
     private static final String USER_NAME = "root";
     private static final String PASSWORD = "root";
     private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
-    private static final String DRIVER_URL = "jdbc:mysql://localhost:3306/spring_boot_plus?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
+    private static final String DRIVER_URL = "jdbc:mysql://localhost:3306/testdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
 
     private static final String PARENT_PACKAGE = "io.geekidea.springbootplus";
     private static final String SUPER_ENTITY = PARENT_PACKAGE + ".common.entity.BaseEntity";
@@ -55,13 +55,13 @@ public class CodeGenerator {
 
     // ############################ 配置部分 start ############################
     // 模块名称
-    private static final String MODULE_NAME = "system";
+    private static final String MODULE_NAME = "common";
     // 作者
-    private static final String AUTHOR = "geekidea";
+    private static final String AUTHOR = "dodar";
     // 生成的表名称
-    private static final String TABLE_NAME = "sys_log";
+    private static final String TABLE_NAME = "yidao";
     // 主键数据库列名称
-    private static final String PK_ID_COLUMN_NAME = "log_id";
+    private static final String PK_ID_COLUMN_NAME = "dao_id";
     // 代码生成策略 true：All/false:SIMPLE
     private static final boolean GENERATOR_STRATEGY = true;
     // 分页列表查询是否排序 true：有排序参数/false：无

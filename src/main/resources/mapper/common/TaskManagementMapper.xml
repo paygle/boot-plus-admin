@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.springbootplus.common.mapper.TaskManagementMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        task_id, mobile_imei, alias, machine_code, ip_address, device_state, reg_code, expire_date, create_time
+    </sql>
+
+    <select id="getTaskManagementById" resultType="io.geekidea.springbootplus.common.web.vo.TaskManagementQueryVo">
+        select <include refid="Base_Column_List"/> from task_management where task_id = #{id}
+    </select>
+
+    <select id="getTaskManagementPageList" resultType="io.geekidea.springbootplus.common.web.vo.TaskManagementQueryVo">
+        select <include refid="Base_Column_List"/> from task_management
+    </select>
+
+</mapper>
