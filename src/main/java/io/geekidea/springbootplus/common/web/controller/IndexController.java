@@ -39,4 +39,5 @@ public class IndexController {
         log.debug("index...");
         return ApiResult.ok("Welcome to Spring Boot Plus Project...");
     }
+
 }

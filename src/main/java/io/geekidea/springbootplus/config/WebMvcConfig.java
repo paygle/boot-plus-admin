@@ -73,5 +73,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        // 添加Web端静态文件目录
+        registry.addResourceHandler("/monitor/**")
+                .addResourceLocations("classpath:/monitor/");
     }
 }
