@@ -1,11 +1,11 @@
 <template>
-  <div class="home-container">
+  <div class="yidao-container">
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item>当前路径</el-breadcrumb-item>
-      <el-breadcrumb-item>首页</el-breadcrumb-item>
+      <el-breadcrumb-item>YiDao</el-breadcrumb-item>
     </el-breadcrumb>
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Yidao"/>
   </div>
 </template>
 
@@ -14,7 +14,7 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
+  name: 'YiDao',
   components: {
     HelloWorld
   }

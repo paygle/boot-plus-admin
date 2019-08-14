@@ -23,6 +23,7 @@ import io.geekidea.springbootplus.security.interceptor.JwtInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -65,6 +66,21 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //                .addPathPatterns("/**")
 //                .excludePathPatterns(springBootPlusProperties.getInterceptorConfig().getPermissionConfig().getExcludePath());
 
+    }
+
+    /**
+     * 跨域请求配置
+     * @author dodar
+     * @param registry
+     * @since 4.2
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/*")
+                .allowedOrigins("/*")
+                .allowCredentials(true)
+                .allowedHeaders("GET","POST","DELETE","PUT","PATCH")
+                .maxAge(3600);
     }
 
     @Override
