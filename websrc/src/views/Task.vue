@@ -11,8 +11,7 @@
         inactive-text="不刷新">
       </el-switch>
       <span class="minite-box">
-        每
-        <el-input-number size="mini" v-model="autoMinute" :min="1" :max="10" label="描述文字"></el-input-number>
+        <el-input-number size="mini" v-model="autoSeconds" :min="1" :max="10" label="描述文字"></el-input-number>
         秒/次
       </span>
     </div>
@@ -76,14 +75,16 @@
 
 <script>
 import { mapState } from 'vuex'
+import { clearInterval, setTimeout } from 'timers';
 
 export default {
   name: 'Task',
   data() {
     return {
-      autoMinute: 1,
+      autoSeconds: 5,
+      currentTimeout: 0,
       isAutoRefresh: true,
-      percentage: 20,
+      percentage: 0,
       customColors: [
         {color: '#f56c6c', percentage: 20},
         {color: '#e6a23c', percentage: 40},
@@ -94,14 +95,58 @@ export default {
       pageSize: 10,
       currentPage: 1,
       total: 0,
-      taskData: []
+      taskData: [],
+      updateRefHandler: null
+    }
+  },
+  watch: {
+    isAutoRefresh: {
+      immediate: true,
+      handler() {
+        this.autoUpdateInfo()
+      }
     }
   },
   computed: {
     ...mapState(['baseReqUrl'])
   },
   methods: {
-    updateTable() {
+    autoUpdateInfo() {
+      const _this = this;
+      let start, oldsteptime
+
+      function step(timestamp) {
+        const mountSec = _this.autoSeconds * 1000
+        const perOne = mountSec / 1000
+        if (!start) start = timestamp;
+        let steptime, percentage, progress = timestamp - start;
+
+        if (progress <= mountSec && _this.isAutoRefresh) {
+          percentage = Math.floor(progress / mountSec * 100) 
+          steptime =  Math.floor(progress / 1000)
+          if ((_this.percentage !== percentage || _this.percentage === 0) && steptime !== oldsteptime) {
+            oldsteptime = steptime
+            _this.percentage = percentage
+          }
+          _this.updateRefHandler = requestAnimationFrame(step);
+        } else if (mountSec >= 1000 && _this.isAutoRefresh) {
+          _this.percentage = 100
+          setTimeout(() => {
+            start = 0
+            _this.percentage = 0
+            _this.updateTable(() => { _this.updateRefHandler = requestAnimationFrame(step); })
+          }, 1000)
+        }
+      }
+
+      if (this.isAutoRefresh) {
+        cancelAnimationFrame(this.updateRefHandler )
+        this.updateRefHandler = requestAnimationFrame(step)
+      } else {
+        cancelAnimationFrame(this.updateRefHandler )
+      }
+    },
+    updateTable(callback) {
       this.$POST(`${this.baseReqUrl}/taskManagement/getPageList`, 
         {current: this.currentPage, keyword: "", size: this.pageSize}
       ).then((data) => {
@@ -110,6 +155,7 @@ export default {
           this.taskData = data.records
           this.total = Number(data.total)
         }
+        if (typeof callback === 'function') callback();
       }).catch((e) => {
         console.log('request data error', e)
       })
