@@ -11,6 +11,36 @@ html,body {
   color: #2c3e50;
   width: 100%;
   height: 100%;
+
+    
+  .el-table {
+    .cell {
+      white-space: nowrap;
+    }
+  }
+
+}
+
+.func-area {
+  text-align: right;
+  margin: 10px 0;
+
+  .el-input-number--mini {
+    width: 100px;
+
+    &>span {
+      height: 18px;
+    }
+    
+    &, .el-input__inner {
+      height: 20px;
+      line-height: 20px;
+    }
+  }
+
+  .minite-box {
+    margin: 0 10px;
+  }
 }
 
 .el-breadcrumb {
@@ -28,4 +58,27 @@ html,body {
   min-width: 280px;
   padding: 50px 80px 10px 0;
   border: 1px solid #ccc;
+}
+
+.el-table__body-wrapper .el-table__expanded-cell {
+
+  .el-form--inline .el-form-item {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+
+  .el-form-item__label {
+    color: #bbb;
+  }
+  
+  .el-form-item__content {
+    font-weight: bold;
+  }
+}
+
+.tb-col-operation {
+
+  .el-button {
+    font-size: 18px;
+  }
 }

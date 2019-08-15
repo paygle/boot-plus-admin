@@ -11,7 +11,7 @@
         inactive-text="不刷新">
       </el-switch>
       <span class="minite-box">
-        <el-input-number size="mini" v-model="autoSeconds" :min="1" :max="10" label="描述文字"></el-input-number>
+        <el-input-number size="mini" v-model="autoSeconds" :min="1" :max="10"></el-input-number>
         秒/次
       </span>
     </div>
@@ -21,7 +21,7 @@
       style="width: 100%">
       <el-table-column type="expand">
         <template slot-scope="props">
-          <el-form label-position="left" inline class="demo-table-expand">
+          <el-form label-position="left" inline>
             <el-form-item label="任务号">
               <span>{{ props.row.taskId }}</span>
             </el-form-item>
@@ -60,6 +60,15 @@
       <el-table-column label="设备状态" prop="deviceState"></el-table-column>
       <el-table-column label="注册码" prop="regCode"> </el-table-column>
       <el-table-column label="到期时间" prop="expireDate"></el-table-column>
+      <el-table-column label="操作" class-name="tb-col-operation">
+        <template slot-scope="prop">
+          <el-button 
+            type="text"
+            @click="deviceOperation(prop.row)"
+            :icon="prop.row.deviceState == 'good' ? 'el-icon-eleme' :'el-icon-video-play'">
+          </el-button>
+        </template>
+      </el-table-column>
     </el-table>
     <el-pagination
       @size-change="handleSizeChange"
@@ -75,7 +84,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import { clearInterval, setTimeout } from 'timers';
 
 export default {
   name: 'Task',
@@ -111,6 +119,9 @@ export default {
     ...mapState(['baseReqUrl'])
   },
   methods: {
+    deviceOperation(row) {
+      console.log("Operation: ", row)
+    },
     autoUpdateInfo() {
       const _this = this;
       let start, oldsteptime
@@ -151,7 +162,7 @@ export default {
         {current: this.currentPage, keyword: "", size: this.pageSize}
       ).then((data) => {
         if (data.records) {
-          console.log('request data ', data)
+          console.log('Task request data ', data)
           this.taskData = data.records
           this.total = Number(data.total)
         }
@@ -168,6 +179,9 @@ export default {
       this.currentPage = val
       this.updateTable()
     }
+  },
+  beforeDestroy() {
+    this.isAutoRefresh = false
   },
   mounted() {
     console.log('init task')

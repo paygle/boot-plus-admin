@@ -6,7 +6,9 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 import {getValueByPath} from './utils/util'
 import 'element-ui/lib/theme-chalk/index.css'
+import { DateLessYearFilter } from './utils/filters'
 
+Vue.filter('dateLessYear', DateLessYearFilter)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 /* axios 请求封装 */
